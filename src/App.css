@@ -1,0 +1,1049 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    border: none;
+}
+
+body {
+    font-family: "Roboto", sans-serif, 'Arial Narrow', Arial;
+}
+
+:root {
+    --white-color: #fff;
+    --menuFont-size: 15px;
+    --darklight-color: #222c31;
+    --animation-all: all .9s ease-in-out;
+    --homeText-big: 43px;
+    --allBtn-fontSize: 12px;
+    --light-grey: rgba(128, 127, 127, 0.911);
+    --secondTitle-fontSize: 35px;
+    --allBox-color: rgba(0, 0, 0, 0.884);
+}
+
+.navBarContainer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    /* transition: var(--animation-all); */
+    color: var(--white-color);
+    background-color: transparent;
+    z-index: 99;
+}
+
+.navBarContainer.scrolled {
+    position: sticky;
+    top: 0;
+    background-color: var(--white-color);
+    color: var(--darklight-color);
+}
+
+.navBarContainer, .navBarMenuContainer, .overLayContainer, .courseContactContainer, .upTextCourse,
+.bottomTextCourseGroup, .secCourseTitleGroup, .midleBox, .amazonBoxOneContainer, .contactBoxMidGrp,
+ .contactBoxBottomGrp, .contactBox, .footerLeftGrp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* color: var(--white-color); */
+}
+
+.navBarMenuContainer {
+    padding: 0;
+    /* color: var(--white-color); */
+}
+
+.navBarMenuContainer.scrolled {
+    color: var(--darklight-color);
+}
+
+.navBarMenuContainer a {
+    margin: 0 15px;
+    color: inherit;
+}
+
+.navBarMenuContainer a h3, .overLayContainer a h3 {
+    font-size: var(--menuFont-size);
+    font-weight: 400;
+    color: var(--white-color);
+}
+
+.hamburgerContainer {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburgerContainer div {
+    width: 30px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: var(--white-color);
+    margin-bottom: 5px;
+}
+
+.overLayContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    text-align: center;
+    transform: scaleY(0) translateX(200%);
+    transition: var(--animation-all);
+    background-color: lightgrey;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.showOverLay {
+    transform: scaleY(1) translateX(0); 
+}
+
+.overLayContainer a {
+    margin-bottom: 20px;
+}
+
+/* ------------------------------------------Home------------------------------------------- */
+
+.homeContainer {
+    background-color: var(--darklight-color);
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("./images/course.webp");
+    background-position: center;
+    background-size: cover;
+}
+
+.homeContact {
+    padding: 168px 80px 80px 80px;
+    text-align: center;
+}
+
+.homeContact h1, .contactRightBoxBigTitle h1 {
+    width: 60%;
+    margin: auto;
+    font-size: var(--homeText-big);
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.homeContact p, .courseP, .secondsCourseP, .amazonOneleft p {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    width: 65%;
+    margin: 30px auto;
+}
+
+.homeContact button {
+    border-radius: 10px;
+    padding: 13px 22px;
+    font-weight: 700;
+    font-size: var(--allBtn-fontSize);
+    color: var(--darklight-color);
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.effect-container {
+    position: relative;
+    overflow: hidden;
+
+    --effect-name: ripple;
+    --effect-duration: 1000ms;
+    --effect-top: 0px;
+    --effect-left: 0px;
+    --effect-height: 100px;
+    --effect-width: 100px;
+    --effect-color: gray;
+}
+
+.effect-container::before {
+    content: "";
+    position: absolute;
+    opacity: 0.3;
+
+    top: var(--effect-top);
+    left: var(--effect-left);
+    height: var(--effect-height);
+    width: var(--effect-width);
+    border-radius: 50%;
+    transform: scale(0);
+    background-color: var(--effect-color);
+}
+
+.effect-container.active::before {
+    border-radius: 50%;
+    animation: ripple var(--effect-duration) linear;
+}
+
+@keyframes ripple {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(6);
+        opacity: 0;
+    }
+}
+
+/* ------------------------------------------Course------------------------------------------- */
+
+.courseContainer {
+    padding: 15px;
+    width: 100%;
+    /* height: 100vh; */
+    margin-top: 100px;
+}
+
+.courseImage {
+    margin-right: 70px;
+}
+
+.courseImage img {
+    width: 460px;
+}
+
+.upTextCourse {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.secondsTitle, .secondsCourseTitle, .midleTitle {
+    font-size: var(--secondTitle-fontSize);
+    font-weight: 600;
+    color: var(--darklight-color);
+    margin-bottom: 30px;
+}
+
+.courseP, .secondsCourseP, .midleBox p {
+    width: 78%;
+    color: var(--light-grey);
+    margin: 0;
+}
+
+.bottomTextCourseGroup {
+    align-items: flex-start;
+}
+
+.box i {
+    font-size: 20px;
+    color: var(--darklight-color);
+}
+
+.boxsTitles, .midleBoxsRTitles {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--darklight-color);
+    margin: 13px 0;
+}
+
+.secondsP, .midleRightContainer div p {
+    width: 80%;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--light-grey);
+    line-height: 25px;
+}
+
+/* ------------------------------------------SecondsCourse------------------------------------------- */
+
+.secondsCourseContainer {
+    margin-top: 70px;
+}
+
+.secondsCourseP {
+    text-align: center;
+}
+
+.secCourseMidleGroup {
+    width: 65%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 55px;
+}
+
+
+.secCourseTitleGroup {
+    flex-direction: column;
+    margin-bottom: 90px;
+}
+
+.secCourseTitleGroup p {
+    margin-top: -15px;
+    width: 55%;
+}
+
+.midleBox {
+    background-color: var(--allBox-color);
+    width: 420px;
+    height: 470px;
+    border-radius: 13px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.midleTitle {
+    color: var(--white-color);
+}
+
+.midleBox p {
+    color: var(--white-color);
+    margin-top: -18px;
+    text-align: center;
+    width: 90%;
+    line-height: 25px;
+}
+
+.firstMidRight {
+    display: flex;
+    align-items: flex-start;
+}
+
+.firstMidRight div:nth-child(1) {
+    margin-top: 14px;
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.midleRightContainer div {
+    margin-bottom: 20px;
+}
+
+.midleRightContainer div p {
+    width: 300px;
+}
+
+
+/* ------------------------------------------SecondsCourse------------------------------------------- */
+
+.thirdsCourse {
+    margin-top: 90px;
+}
+
+.thirdMidTitle {
+    width: 80%;
+    text-align: center;
+}
+
+
+/* ------------------------------------------Slider------------------------------------------- */
+
+.slideTitleGroup {
+    margin-top: 200px;
+    text-align: center;
+}
+
+.slideP {
+    width: 100%;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.slideBoxGroup {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95vw;
+    margin: 80px auto;
+    height: 380px;
+    background-image: url(./images/Background.webp);
+    background-position: 50%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slideBox {
+    position: absolute;
+    color: var(--white-color);
+    transition: var(--animation-all);
+}
+
+.slideBoxTwo {
+    transform: translateX(-100%);
+    transition: var(--animation-all);
+}
+
+.amazonBoxOneContainer {
+    padding: 100px;
+    margin-top: -13px;
+}
+
+.amazonOneleft p {
+    width: 74%;
+    margin-left: 0;
+}
+
+.amazonOneleft .amazonSecP {
+    font-size: 13.5px;
+}
+
+.amazonOneleft .amazonSecP span {
+    color: var(--light-grey);
+}
+
+.amazonImg img {
+    width: 260px;
+}
+
+.sliderBtnContainer {
+    position: absolute;
+    bottom: 50px;
+}
+
+.sliderBtnContainer button {
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    margin: 3px;
+    cursor: pointer;
+    transition: var(--animation-all);
+}
+
+/* ------------------------------------------Contact------------------------------------------- */
+
+.contactTitle {
+    margin-top: 130px;
+}
+
+.contactTitle p {
+    width: 40%;
+    margin: auto;
+}
+
+.contactLeft {
+    width: 50%;
+}
+
+.contactBox {
+    padding: 40px;
+    width: 90%;
+    margin: auto;
+    margin-top: 115px;
+    margin-bottom: 30px;
+    border-radius: 13px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px -1px, rgba(0, 0, 0, 0.07) 0px 2px 4px -1px;
+}
+
+.contactBoxTitle {
+    font-size: 30px;
+}
+
+.contactBoxP {
+    width: 100%;
+    margin-top: -20px;
+}
+
+.contactBoxMidGrp {
+    margin: 30px 0;
+}
+
+.contactBoxMidGrp h3 {
+    font-size: 17px;
+}
+
+.contactBoxMidGrp hr {
+    margin-right: 45px;
+    width: 280px;
+    border-bottom: 1px solid rgb(226, 225, 225);
+}
+
+.contBoxBottomOneGrp {
+    margin: 0;
+}
+
+.contBoxBottomOneGrp div {
+    margin-bottom: 10px;
+}
+
+.contactRight {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactRBoxTitle {
+    font-size: 18px;
+}
+
+.contactRightBoxBigTitle {
+    padding: 0;
+}
+
+.contactRightBoxBigTitle h1 {
+    color: var(--darklight-color);
+}
+
+.contactRightBoxBtn {
+    padding: 0;
+}
+
+.contactRightBoxBtn button {
+    margin: 14px 0;
+    height: 43px;
+    font-weight: 800;
+    font-size: 11px;
+    color: var(--white-color);
+    background-color: var(--darklight-color);
+}
+
+.contactRight p {
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* ------------------------------------------OtherCourses------------------------------------------- */
+.otherCourses {
+    margin-top: 80px;
+}
+
+.otherCoursesTitleGrp {
+    text-align: center;
+}
+
+.otherCoursesTitleGrp p {
+    width: 45%;
+    margin: auto;
+}
+
+.otherCoursesPjGrp {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(5, 1fr);
+    width: 95%;
+    margin: 100px auto;
+}
+
+.otherCoursesPjGrp img {
+    width: 290px;
+}
+
+.otherCoursesPjGrp p {
+    width: 100%;
+}
+
+.otherCoursesBtn {
+    text-align: left;
+}
+
+.otherCoursesBtn button {
+    font-size: 11px;
+    height: 35px;
+    padding: 0px 16px;
+}
+
+/* ------------------------------------------Footer------------------------------------------- */
+.footerGrp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 200px;
+    width: 85%;
+    margin: auto;
+}
+
+.footerLeftGrp {
+    width: 600px;
+}
+
+.companyGrp .companyTitle {
+    margin: 8px 0;
+}
+
+.footA p {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.footA p:hover {
+    color: #000;
+}
+
+.footerRightGrp {
+    width: 400px;
+}
+
+.footerRightGrp div label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footerRightGrp div .contactBoxP {
+    margin: 0;
+    display: block;
+}
+
+.footerRightGrp div p {
+    width: 95%;
+    margin: 16px 0;
+}
+
+.footerRInputTitle {
+    font-weight: 500;
+}
+
+.inputGrp {
+    position: relative;
+}
+
+.footerRightGrp div input {
+    border: 1px solid var(--light-grey);
+    padding: 11px;
+    border-radius: 8px;
+    width: 270px;
+    margin-right: 20px;
+    background-color: transparent;
+}
+
+.footerRightGrp div input:focus {
+    border: 2px solid var(--darklight-color);
+}
+
+
+.aniEmail {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 3px;
+    font-size: 12px;
+    transform: translateY(-100%);
+    color: var(--light-grey);
+    background-color: var(--white-color);
+    transition: all .2s ease-in-out;
+}
+
+.aniEmailPlaceholder {
+    position: absolute;
+    color: var(--light-grey);
+    font-size: 14px;
+    top: 28px;
+    left: 10px;
+    transform: translateY(-100%);
+    z-index: -1;
+}
+
+.footerRightGrp div .footBtn {
+    display: inline-block;
+}
+
+.footerRightGrp div .footBtn button {
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    padding: 0;
+}
+
+.footerRightGrp div .footerTextArea {
+    font-size: 15px;
+}
+
+.footerRightGrp div .footerTextArea a {
+    text-decoration: underline;
+    color: var(--light-grey);
+    font-weight: 600;
+}
+
+.footerRightGrp div .footerTextArea a:hover {
+    color: var(--darklight-color);
+}
+
+.developerMeContainer {
+    margin: 70px 0 20px 0;
+}
+
+.developerMe {
+    margin: auto;
+    text-align: center;
+}
+
+.developerMe a {
+    font-weight: 600;
+    color: var(--light-grey);
+}
+
+.developerMe a:hover {
+    color: var(--darklight-color);
+}
+
+
+/* ----------------------------------------------@media------------------------------------------- */
+/* ----------------------------------------------@media------------------------------------------- */
+/* ----------------------------------------------@media------------------------------------------- */
+/* ----------------------------------------------@media------------------------------------------- */
+
+@media (max-width: 1345px) {
+    .otherCoursesPjGrp img {
+        width: 280px;
+    }
+    .otherCoursesPjGrp {
+        position: relative;
+    }
+    .otherCoursesBtn button {
+        position: absolute;
+        bottom: -60px;
+    }
+}
+
+@media (max-width: 1305px) {
+    .otherCoursesPjGrp {
+        width: 90%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .otherCoursesPjGrp {
+        position: static;
+    }
+    .otherCoursesPjGrp img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    }
+    .otherCoursesBtn button {
+        position: static;
+    }
+}
+
+
+@media (max-width: 1135px) {
+    .courseImage {
+        margin: auto;
+    }
+    .courseContactContainer {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .upTextCourse {
+        margin-top: 20px;
+        align-items: center;
+    }
+    .upTextCourse p {
+        text-align: center;
+    }
+    .bottomTextCourseGroup .box {
+        padding-left: 30px;
+    }
+    .secCourseMidleGroup {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .midleBox {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+    }
+    .firstMidRight div p {
+        width: 100%;
+    }
+    .contactBoxMidGrp {
+        flex-wrap: wrap;
+    }
+    .boxsTitles {
+        margin-right: 3%;
+    }
+    .contactRBoxTitle {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1119px) {
+    .amazonBoxOneContainer {
+        margin-top: -30px;
+    }
+    .amazonOneleft p {
+        font-size: 120%;
+    }
+    /* .amazonImg img {
+        width: 70%;
+    } */
+}
+
+@media (max-width: 983px) {
+    .contBoxBottomOneGrp div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 959px) {
+    .navBarMenuContainer {
+        display: none;
+    }
+    .hamburgerContainer {
+        display: block;
+    }
+    .contactTitle .slideP, .otherCoursesTitleGrp p {
+        width: 90%;
+    }
+}
+/* --------v min 959px-------- */
+@media (min-width: 959px) {
+    .overLayContainer {
+        display: none;
+    }
+}
+
+@media (max-width: 925px) {
+    .otherCoursesPjGrp {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 936px) {
+    .amazonBoxOneContainer {
+        margin-top: -60px;
+    }
+    .amazonOneleft p {
+        font-size: 120%;
+    }
+    .amazonOneleft .amazonSecP, .amazonSecP span {
+        font-size: 12px;
+    }
+    .amazonImg img {
+        width: 60%;
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 885px) {
+    .amazonBoxOneContainer {
+        margin-top: -30px;
+        padding: 80px;
+    }
+    .amazonOneleft p {
+        width: 110%;
+        font-size: 120%;
+    }
+    .amazonOneleft .amazonSecP, .amazonSecP span {
+        font-size: 15px;
+    }
+    .amazonImg img {
+        width: 50%;
+        margin-left: 110px;
+    }
+}
+
+@media (max-width: 820px) {
+    .contactBox {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .contactBoxTitleGrp {
+        text-align: center;
+    }
+    .contactLeft {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 760px) {
+    .homeContact h1,.homeContact p {
+        width: 100%;
+    }
+}
+
+@media (max-width: 756px) {
+    .amazonOneleft .amazonSecP, .amazonSecP span {
+        width: 200%;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 745px) {
+    .amazonImg img {
+        width: 70%;
+        margin-left: 80px;
+    }
+    .sliderBtnContainer {
+        margin-bottom: -30px;
+    }
+}
+
+@media (max-width: 730px) {
+    .slideBoxGroup {
+        height: 500px;
+    }
+    .amazonImg img {
+        margin: 0;
+    }
+    .amazonBoxOneContainer {
+        margin-top: -70px;
+        flex-direction: column-reverse;
+    }
+    .amazonOneleft {
+        margin-top: -30px;
+    }
+}
+
+
+@media (max-width: 553px) {
+    .homeContainer {
+        height: 600px;
+    }
+    .homeContact {
+        padding: 150px 30px 30px 30px;
+    }
+    .bottomTextCourseGroup {
+        display: flex;
+        flex-direction: column;
+    }
+    .bottomTextCourseGroup .box{
+        margin-bottom: 60px;
+    }
+    .bottomTextCourseGroup .box p {
+        width: 100%;
+    }
+    .contactRightBoxBigTitle, .contactRightBoxBtn {
+        padding: 0;
+    }
+}
+
+@media (max-width: 516px) {
+    .homeContainer {
+        height: 700px;
+    }
+}
+
+@media (max-width: 484px) {
+    .homeContainer {
+        height: 600px;
+    }
+    .homeContact {
+        padding: 90px 30px 30px 30px;
+    }
+    .secondsCourseTitle {
+        text-align: center;
+    }
+    .courseImage {
+        width: 80%;
+        margin: auto;
+    }
+    .courseImage img {
+        width: 100%;
+    }
+    .midleTitle {
+        text-align: center;
+    }
+    .contactRightBoxBigTitle, .contactRightBoxBtn {
+        padding: 0;
+    }
+}
+
+@media (max-width: 429px) {
+    .otherCoursesPjGrp img {
+        height: 50%;
+    }
+}
+
+@media (max-width: 420px) {
+    .amazonOneleft .amazonSecP, .amazonSecP span {
+        width: 100%;
+    }
+    .contactBoxBottomGrp {
+        flex-wrap: wrap;
+    }
+    .contactBoxMidGrp hr {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 385px) {
+    .homeContainer {
+        height: 750px;
+    }
+}
+
+@media (max-width: 362px) {
+    .amazonOneleft .amazonSecP, .amazonSecP span {
+        width: 150%;
+        margin-top: -10%;
+    }
+}
+
+@media (max-width: 360px) {
+    .otherCoursesPjGrp img {
+        height: 40%;
+    }
+}
+
+@media (max-width: 335px) {
+    .slideBoxGroup {
+        height: 550px;
+    }
+    .amazonOneleft .amazonSecP, .amazonSecP span {
+        width: 140%;
+        margin-top: -12%;
+    }
+}
+
+@media (max-width: 309px) {
+    .slideBoxGroup {
+        height: 600px;
+    }
+    .amazonOneleft .amazonSecP, .amazonSecP span {
+        width: 140%;
+        margin-top: -13%;
+    }
+}
+
+@media (max-width: 295px) {
+    .homeContainer {
+        height: 900px;
+    }
+    .slideBoxGroup {
+        background-size: cover;
+    }
+    .slideBoxGroup {
+        height: 800px;
+    }
+    .amazonImg {
+        width: 200%;
+        margin-top: 30px;
+        margin-left: 50%;
+    }
+    .sliderBtnContainer {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 289px) {
+    .otherCoursesPjGrp img {
+        height: 30%;
+    }
+}
+
+@media (max-width: 272px) {
+    .slideBoxGroup {
+        height: 900px;
+    }
+}
+
+@media (max-width: 266px) {
+    .midleTitle {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 216px) {
+    .contactBox {
+        padding: 20px;
+    }
+    .contactBoxTitle {
+        font-size: 20px;
+    }
+}
