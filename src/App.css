@@ -79,7 +79,7 @@ body {
     width: 30px;
     height: 3px;
     border-radius: 5px;
-    background-color: var(--white-color);
+    background-color: var(--light-grey);
     margin-bottom: 5px;
 }
 
@@ -714,6 +714,25 @@ body {
     }
 }
 
+@media (max-width: 1285px) {
+    .footerGrp {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 100px;
+    }
+    .footerRightGrp {
+        width: 100%;
+    }
+    .footerRightGrp .inputGrp input, .footerRightGrp div .footBtn button {
+        width: 100%;
+    }
+    .footerRightGrp div .footBtn {
+        display: inline;
+    }
+    .footerTextArea {
+       text-align: center;
+    }
+}
+
 
 @media (max-width: 1135px) {
     .courseImage {
@@ -889,6 +908,13 @@ body {
     }
 }
 
+@media (max-width: 700px) {
+    .footerLeftGrp {
+        width: 400px;
+        margin: auto;
+    }
+}
+
 
 @media (max-width: 553px) {
     .homeContainer {
@@ -946,6 +972,9 @@ body {
 @media (max-width: 429px) {
     .otherCoursesPjGrp img {
         height: 50%;
+    }
+    .footerLeftGrp {
+        width: 300px;
     }
 }
 
