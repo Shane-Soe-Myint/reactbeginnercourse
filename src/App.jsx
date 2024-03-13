@@ -27,6 +27,7 @@ function App() {
                 setMenuShow(false);
             } else {
                 setScrolling(false);
+                setMenuShow(false);
             }
         };
 

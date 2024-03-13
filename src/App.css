@@ -117,6 +117,9 @@ body {
     background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("./images/course.webp");
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
 }
 
 .homeContact {
